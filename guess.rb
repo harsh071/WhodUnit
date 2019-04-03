@@ -7,8 +7,8 @@
 //-----------------------------------------
 =end
 class Guess
-  attr_reader :weapon, :place, :person, :guess_type
-  def initialize(guess_type, person, place, weapon)
+  attr_reader :weapon, :place, :person, :guess_type #getters.
+  def initialize(guess_type, person, place, weapon) #contructors.
     @guess_type = guess_type
     @person = person
     @place  = place
@@ -16,7 +16,7 @@ class Guess
 
   end
 
-  def printit
+  def printit #print the guess.
     if(@guess_type)
       print "Suggestion"
     else

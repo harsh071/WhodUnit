@@ -54,6 +54,7 @@ harsh.setup(2, 1,people,places,weapons)
 harsh2.setup(2, 2,people,places,weapons)
 
 
+
 # harsh.locations.each do |weapon|
 #   weapon.printit
 # end
@@ -61,13 +62,16 @@ what = Guess.new(true,harsh.suspects[0],harsh.locations[0],harsh.weapons[0])
 harsh.setCard(  Card.new(:place,"COMP 2150 course"))
 harsh.setCard(  Card.new(:weapon,"midterm"))
 harsh.setCard(  Card.new(:weapon,"Prof. Boyer"))
+harsh2.setCard(  Card.new(:place,"COMP 2160 course"))
+harsh2.setCard(  Card.new(:weapon,"final exam"))
+harsh2.setCard(  Card.new(:weapon,"Prof. Miller"))
 
 
-
-carsss = harsh.canAnswer(harsh,what)
-
-puts carsss.value
-#
+carsss = harsh.canAnswer(harsh2,what)
+if(carsss == nil)
+puts "sorry "
+end
+  #
 # harsh.cards.each do |weapon|
 #   weapon.printit
 # end

@@ -10,17 +10,17 @@
 require_relative "Guess"
 require_relative "AbstractPlayer"
 class InteractivePlayer < AbstractPlayer
-  def initialize
-    puts "Player initialized. "
+  def initialize #constructor.
+    puts "Human Player initialized. "
   end
 
 
-  def setup(numplayers, index, suspects, locations, weapons)
+  def setup(numplayers, index, suspects, locations, weapons)#this gives the player the info of the game
     super(numplayers, index, suspects, locations, weapons)
   end
 
 
-  def canAnswer(player_i,guess)
+  def canAnswer(player_i,guess)  #checks if the player has the cards and can answer.
 
     puts "Asking player "+ @index.to_s
 
@@ -60,7 +60,6 @@ class InteractivePlayer < AbstractPlayer
           puts "2: " + @cards[index3].value
         end
         result = gets.chomp.to_i
-
 # check for validity
         if(index3!=nil)
           while(result < 0 || result > 2)
@@ -82,7 +81,7 @@ class InteractivePlayer < AbstractPlayer
 
           result = gets.chomp.to_i
 
-          while(result!=0 || result!=2)
+          while(result!=0 || result!=2 )
             puts "Not Valid. Try Again"
             result = gets.chomp.to_i
           end
@@ -163,7 +162,7 @@ class InteractivePlayer < AbstractPlayer
   end
 
 
-  def setCard(card)
+  def setCard(card) #Adds to the cards the player has.
     @cards.push(card)
   end
 

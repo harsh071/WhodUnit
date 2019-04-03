@@ -13,4 +13,9 @@ class Model
     @weapons = weapons
   end
 
+  def setPlayers(players)
+
+  end
+
+
 end

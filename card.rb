@@ -8,16 +8,15 @@
 =end
 
 class Card
+  attr_reader :value, :type #getters
 
-  attr_reader :value, :type
-
-  def initialize(type, value)
+  def initialize(type, value) #constructor.
     @type = type
     @value = value
   end
 
-  def printit
-    puts @value
+  def printit #prints the cards type and value.
+    puts @type.to_s + " : " + @value
   end
 
 
