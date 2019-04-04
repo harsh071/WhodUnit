@@ -9,7 +9,7 @@
 
 class AbstractPlayer
   #getters and setters.
-  attr_reader :weapons, :numberPlayers, :index, :locations, :suspects, :cards
+  attr_reader :weapons, :numberPlayers, :index, :locations, :suspects, :cards , :finalGuess
   attr_writer :numberPlayers
 
 
@@ -25,12 +25,22 @@ class AbstractPlayer
 
   #Recieves info about the games so that the player is ready to play .
   def setup(numplayers, index, suspects, locations, weapons)
+    @suspects = suspects
+    @locations = locations
+    @weapons =weapons
+    @suspectsGuess = []
+    @locationsGuess = []
+    @weaponsGuess = []
     @numberPlayers = numplayers
     @index = index
-    @suspects = suspects.clone
-    @locations = locations.clone
-    @weapons = weapons.clone
+
+
+    suspects.each { |s| @suspectsGuess.push(s.clone) }
+    locations.each { |l| @locationsGuess.push(l.clone) }
+    weapons.each { |w| @weaponsGuess.push(w.clone) }
+
     @cards = [] #these are the cards that the player will hold later on as they are distributed.
+    @finalGuess = Array.new(3) # this will be the final correct answer.
   end
 
 

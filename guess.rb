@@ -8,7 +8,7 @@
 =end
 class Guess
   attr_reader :weapon, :place, :person, :guess_type #getters.
-  def initialize(guess_type, person, place, weapon) #contructors.
+  def initialize(person, place, weapon,guess_type) #contructors.
     @guess_type = guess_type
     @person = person
     @place  = place
@@ -23,5 +23,10 @@ class Guess
       print "Accusation"
     end
     print ": "+ @person.value.to_s + " in " +@place.value.to_s + " with the "+@weapon.value.to_s + "."
+  end
+
+
+  def isAccusation
+    return @guess_type
   end
 end
